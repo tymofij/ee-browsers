@@ -29,10 +29,10 @@ $(document).ready(function() {
 	                else if (item == "WebKit/KHTML")
     	                series[itemNo] = { name: 'Webkit', color: "green", icon: "chrome.png", data: [] }
 				})
-			} else // either comment or meat			
+			} else {// either comment or meat
 			    $.each(items, function(itemNo, item) {
 			        item = item.replace(/"/g, '')
-			        if (item && !isNaN(item[0])) { // that is a number, workit
+			        if (item && !isNaN(item.slice(0,1))) { // that is a number, workit
 				        if (itemNo == 0) { 
 				            // date
 				            chunks = item.split(".")
@@ -42,6 +42,7 @@ $(document).ready(function() {
 				        }
 				    }
 			    });
+		    }
 		});
 		
         chart = new Highcharts.Chart({
@@ -62,7 +63,7 @@ $(document).ready(function() {
             }
         },      
         title: { text: null },
-        xAxis: { type: 'datetime', },
+        xAxis: { type: 'datetime' },
         yAxis: {
                 title: { text: '%' },
                 min: 0,  max: 89,
@@ -70,18 +71,18 @@ $(document).ready(function() {
         },
         tooltip: {
             borderColor: "gray",
-//            crosshairs: true,
-//            shared: true,
+            crosshairs: true,
+            shared: (!$.browser.opera)
         },
         legend: { enabled: false },
         series: series,
-        credits: { position: {y: 20} },
+        credits: { position: {y: 20} }
         });
-        
+
         $.each(series, function(itemNo, item) {
             $("#container").append('<img src="icons/'+item.icon+'" style="position:absolute; left:20px;bottom:'+(item.data[0].y*6.4+15)+'px;"/>')
         });
-        
+
         var countries = "bulgaria czech_republic estonia hungary latvia lithuania poland slovakia russia turkey ukraine".split(" ")
         $.each(countries, function(itemNo, item) {
             iname = item.replace(/_/g, ' ')
