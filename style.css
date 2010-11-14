@@ -1,7 +1,7 @@
-body {margin: 0; padding: 0; min-width: 1153px;  line-height: 100%;}
-a:hover {}
+* {margin: 0; padding: 0; }
+body { line-height: 100%;} /* https://github.com/highslide-software/highcharts.com/issues/#issue/131 */
 h1 {
-    font: 37px 'Cantarell', arial, serif;
+    font: 37px 'Cantarell', Verdana, Arial, serif;
     text-align: center;
     margin: 4px 0; 
 }
@@ -11,33 +11,41 @@ h1 {
     border-radius: 0 0 40px 40px;
     -moz-border-radius: 0 0 40px 40px;
     -webkit-border-radius: 0 0 40px 40px;
-    background: #fafafa;    
+    background: #fafafa;
     background: -moz-linear-gradient(bottom, #cccccc, #fafafa);
     background: -webkit-gradient(linear, left bottom, left top, from(#cccccc), to(#fafafa)); 
     box-shadow: 1px 1px 3px #ccc;
     -moz-box-shadow: 1px 1px 3px #ccc;
-    -webkit-box-shadow: 1px 1px 3px #ccc;    
-    padding: 0; 
-    margin: 0 auto 5px; 
-    width: 85%;
-    text-align: center;    
+    -webkit-box-shadow: 1px 1px 3px #ccc;
+    margin: 0 auto;
+    text-align: center;
     height: 26px;
+    width: 900px;
+    }
+    #countries a {
+        display: inline-block;
+        padding: 7px 5px 4px 25px;
+        background-position: 6px 7px;
+        border-left: 1px solid silver;
+        background-repeat: no-repeat;
+        font: bold 11px Arial;
+        text-decoration: none;
+        color: #666;
+        }
+        #countries a:hover{
+            color: #333;
+            text-decoration: underline;
+        }
+        #countries a:last-child {
+            border-right: 1px solid silver;
+        }
+
+#container {
+    width: 900px;
+    margin: 0 auto;
+    position: relative;
 }
-#countries a {
-    display: inline-block; 
-    padding: 5px 5px 6px 25px;
-    background-position: 6px 7px;
-    border-left: 1px solid silver;
-    background-repeat: no-repeat;
-    font: bold 11px Verdana;
-    text-decoration: none; 
-    color: #666;
-    }
-    #countries a:hover{
-        color: #333;
-        text-decoration: underline;
-    }
-    #countries a:last-child {
-        border-right: 1px solid silver;    
-    }
-    
+
+#highchart {
+    height: 500px;
+}
