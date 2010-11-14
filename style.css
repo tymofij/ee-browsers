@@ -1,0 +1,43 @@
+body {margin: 0; padding: 0; min-width: 1153px}
+a:hover {}
+h1 {
+    font: 37px 'Cantarell', arial, serif;
+    text-align: center;
+    margin: 4px 0; 
+}
+#countries {
+    border: 1px solid gray;
+    border-top: none;
+    border-radius: 0 0 40px 40px;
+    -moz-border-radius: 0 0 40px 40px;
+    -webkit-border-radius: 0 0 40px 40px;
+    background: #fafafa;    
+    background: -moz-linear-gradient(bottom, #cccccc, #fafafa);
+    background: -webkit-gradient(linear, left bottom, left top, from(#cccccc), to(#fafafa)); 
+    box-shadow: 1px 1px 3px #ccc;
+    -moz-box-shadow: 1px 1px 3px #ccc;
+    -webkit-box-shadow: 1px 1px 3px #ccc;    
+    padding: 0; 
+    margin: 0 auto 5px; 
+    width: 85%;
+    text-align: center;    
+    height: 26px;
+}
+#countries a {
+    display: inline-block; 
+    padding: 5px 5px 6px 25px;
+    background-position: 6px 7px;
+    border-left: 1px solid silver;
+    background-repeat: no-repeat;
+    font: bold 11px Verdana;
+    text-decoration: none; 
+    color: #666;
+    }
+    #countries a:hover{
+        color: #333;
+        text-decoration: underline;
+    }
+    #countries a:last-child {
+        border-right: 1px solid silver;    
+    }
+    
