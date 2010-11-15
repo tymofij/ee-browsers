@@ -49,3 +49,12 @@ h1 {
 #highchart {
     height: 500px;
 }
+
+#about {
+    width: 700px; margin: 25px auto 0;
+    }
+    p { margin: 0 0 20px 0; font: 11px  Verdana, Arial, sans-serif;}
+    p.me { font-size: 12px }
+    p.me a {font-weight: bold;}
+
+#social .twitter-share-button {height: 47px !important; margin-top: 3px; margin-right: 50px}
