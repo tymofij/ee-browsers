@@ -17,8 +17,6 @@ h1 {
     box-shadow: 1px 1px 3px #ccc;
     -moz-box-shadow: 1px 1px 3px #ccc;
     -webkit-box-shadow: 1px 1px 3px #ccc;
-    margin: 0 auto;
-    text-align: center;
     display: inline-block;
     padding: 0 22px
     }
