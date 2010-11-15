@@ -1,5 +1,10 @@
-var chart;
+String.prototype.capitalize = function(){
+    return this.replace(/\w+/g, function(a){
+        return a.charAt(0).toUpperCase() + a.substr(1).toLowerCase();
+    });
+};
 
+var chart;
 $(document).ready(function() {
     series  = [];
     if (window.location.href.indexOf('?') == -1 ) {
@@ -7,9 +12,9 @@ $(document).ready(function() {
     } else {
         var country = window.location.href.slice(window.location.href.indexOf('?') + 1)
     }
-    iname = country.replace(/_/g, ' ')
-    iname = iname.charAt(0).toUpperCase() + iname.slice(1);
-    $("h1").html(document.title = "Browsers in "+ iname)
+    country_name = country.replace(/_/g, ' ').capitalize()
+    $("h1").html("Browsers in "+country_name)
+    document.title = "Browser history in "+country_name
     
     $.get('csv/'+country+'.csv', function(data) {
         // Split the lines
@@ -86,8 +91,7 @@ $(document).ready(function() {
 
         var countries = "bulgaria czech_republic estonia hungary latvia lithuania poland slovakia russia turkey ukraine".split(" ")
         $.each(countries, function(itemNo, item) {
-            iname = item.replace(/_/g, ' ')
-            iname = iname.charAt(0).toUpperCase() + iname.slice(1);
+            iname = item.replace(/_/g, ' ').capitalize()
             $("#countries").append('<a href="'+window.location.pathname+'?'+item+'" style="background-image:url(flags/'+item+'.png);">'+iname+'</a>')
         });
     });
