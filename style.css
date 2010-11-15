@@ -53,8 +53,9 @@ h1 {
 #about {
     width: 700px; margin: 25px auto 0;
     }
-    p { margin: 0 0 20px 0; font: 11px  Verdana, Arial, sans-serif;}
-    p.me { font-size: 12px }
+    p { margin: 0 0 20px 0; font: 12px  Verdana, Arial, sans-serif;}
+    p.fine { font-size: 11px; opacity: 0.7;}
+    p.fine:hover {opacity: 1}
     p.me a {font-weight: bold;}
 
 #social .twitter-share-button {height: 47px !important; margin-top: 3px; margin-right: 50px}
