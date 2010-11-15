@@ -19,13 +19,13 @@ h1 {
     -webkit-box-shadow: 1px 1px 3px #ccc;
     margin: 0 auto;
     text-align: center;
-    height: 26px;
-    width: 900px;
+    display: inline-block;
+    padding: 0 22px
     }
     #countries a {
         display: inline-block;
-        padding: 7px 5px 4px 25px;
-        background-position: 6px 7px;
+        padding: 6px 5px 4px 25px;
+        background-position: 6px 6px;
         border-left: 1px solid silver;
         background-repeat: no-repeat;
         font: bold 11px Arial;
