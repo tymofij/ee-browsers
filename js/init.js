@@ -15,6 +15,12 @@ $(document).ready(function() {
     country_name = country.replace(/_/g, ' ').capitalize()
     $("h1").html("Browsers in "+country_name)
     document.title = "Browser history in "+country_name
+
+    var countries = "bulgaria czech_republic estonia hungary latvia lithuania poland slovakia russia turkey ukraine".split(" ")
+    $.each(countries, function(itemNo, item) {
+        iname = item.replace(/_/g, ' ').capitalize()
+        $("#countries").append('<a href="'+window.location.pathname+'?'+item+'" style="background-image:url(flags/'+item+'.png);">'+iname+'</a>')
+    });
     
     $.get('csv/'+country+'.csv', function(data) {
         // Split the lines
@@ -87,12 +93,6 @@ $(document).ready(function() {
 
         $.each(chart.series, function(itemNo, item) {
             $("#container").append('<img src="icons/'+series[itemNo].icon+'" style="position:absolute;left:0;top:'+(item.data[0].plotY-10)+'px;"/>')
-        });
-
-        var countries = "bulgaria czech_republic estonia hungary latvia lithuania poland slovakia russia turkey ukraine".split(" ")
-        $.each(countries, function(itemNo, item) {
-            iname = item.replace(/_/g, ' ').capitalize()
-            $("#countries").append('<a href="'+window.location.pathname+'?'+item+'" style="background-image:url(flags/'+item+'.png);">'+iname+'</a>')
         });
     });
 });
