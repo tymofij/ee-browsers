@@ -11,7 +11,8 @@ h1 {
     border-radius: 0 0 40px 40px;
     -moz-border-radius: 0 0 40px 40px;
     -webkit-border-radius: 0 0 40px 40px;
-    background: #fafafa;
+    background: #fafafa url(silver.svg) repeat-x;
+    background-size: 100% 100%;
     background: -moz-linear-gradient(bottom, #cccccc, #fafafa);
     background: -webkit-gradient(linear, left bottom, left top, from(#cccccc), to(#fafafa)); 
     box-shadow: 1px 1px 3px #ccc;
