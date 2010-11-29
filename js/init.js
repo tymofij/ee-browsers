@@ -84,7 +84,7 @@ $(document).ready(function() {
         tooltip: {
             borderColor: "gray",
             crosshairs: true,
-            shared: (!$.browser.opera)
+            shared: true
         },
         legend: { enabled: false },
         series: series,
