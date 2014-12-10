@@ -12,9 +12,13 @@ $(document).ready(function() {
     } else {
         var country = window.location.href.slice(window.location.href.indexOf('?') + 1)
     }
-    country_name = country.replace(/_/g, ' ').capitalize()
-    $("h1").html("Browsers in "+country_name)
-    document.title = "Browsers in "+country_name
+    var title = "Browsers in " + country.replace(/_/g, ' ').capitalize()
+    $("h1").html(title)
+    document.title = title
+    $(".twitter-share-button").data({
+        url: window.location.href,
+        text: title
+    })
 
     var countries = "bulgaria czech_republic estonia hungary latvia lithuania poland slovakia russia turkey ukraine".split(" ")
     $.each(countries, function(itemNo, item) {
