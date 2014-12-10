@@ -50,8 +50,7 @@ h1 {
 
 #about {
     width: 700px; margin: 60px auto 0;
+    font: 12px  Verdana, Arial, sans-serif;
     }
-    p { margin: 30px 0; font: 12px  Verdana, Arial, sans-serif;}
-    p.me a {font-weight: bold;}
-
-#social .twitter-share-button {height: 47px !important; margin-top: 3px; margin-right: 50px}
+    a.me {font-weight:bold;}
+.twitter-share-button {position:relative; left:20px; top:5px;}

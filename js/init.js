@@ -15,9 +15,9 @@ $(document).ready(function() {
     var title = "Browsers in " + country.replace(/_/g, ' ').capitalize()
     $("h1").html(title)
     document.title = title
-    $(".twitter-share-button").data({
-        url: window.location.href,
-        text: title
+    $(".twitter-share-button").attr({
+        'data-url': window.location.href,
+        'data-text': title
     })
 
     var countries = "bulgaria czech_republic estonia hungary latvia lithuania poland slovakia russia turkey ukraine".split(" ")
