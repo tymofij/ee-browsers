@@ -1,0 +1,3 @@
+# needs python2.6, ascii errors with pyamf 0.6.1 and python2.7
+
+pyamf
