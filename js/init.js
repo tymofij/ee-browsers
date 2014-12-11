@@ -26,24 +26,23 @@ $(document).ready(function() {
         $("#countries").append('<a href="'+window.location.pathname+'?'+item+'" style="background-image:url(flags/'+item+'.png);">'+iname+'</a>')
     });
 
-    $.get('json/'+country+'.json', function(data) {
+    $.get('json/' + country + '.json', function(data) {
         var series = {}
+        var headers = {
+            "Opera": { name: 'Opera', color: "red", icon: "opera.png" },
+            "Gecko": { name: 'Gecko', color: "#FF8040", icon: "firefox.png" },
+            "MSIE": { name: 'MSIE', color: "blue", icon: "ie.png" },
+            "WebKit/KHTML": { name: 'Webkit', color: "green", icon: "chrome.png" }
+        }
         $.each(data.coding, function(code, browser){
-            // var browser = data.coding[code]
-            if (browser.name == "Opera") {
-                series[code] = { name: 'Opera', color: "red", icon: "opera.png", data: [] }
-            } else if (browser.name == "Gecko") {
-                series[code] = { name: 'Gecko', color: "#FF8040", icon: "firefox.png", data: [] }
-            } else if (browser.name == "MSIE") {
-                series[code] = { name: 'MSIE', color: "blue", icon: "ie.png", data: [] }
-            } else if (browser.name == "WebKit/KHTML") {
-                series[code] = { name: 'Webkit', color: "green", icon: "chrome.png", data: [] }
-            }
+            series[code] = headers[browser.name];
+            series[code].data = [];
         })
         $.each(data.data, function(i, day){
             var date = new Date(day.__TIME__ * 1000)
             $.each(day, function(key, val){
                 if (key != "__TIME__") {
+                    val = Math.round(val * 100) / 100
                     series[key].data.push({x:date, y:val })
                 }
             })
@@ -52,7 +51,9 @@ $(document).ready(function() {
         $.each(series, function(key, val){
             arr_series.push(val);
         })
-
+        Highcharts.Series.prototype.tooltipHeaderFormatter = function (point) {
+           return "<i>" + point.key.toLocaleDateString() + "</i><br/>";
+        };
         chart = new Highcharts.Chart({
             chart: {
                 spacingRight:0, spacingLeft:0, spacingTop:0, spacingBottom:1,
@@ -64,11 +65,6 @@ $(document).ready(function() {
                     marker: {
                         enabled: false,
                         symbol: 'circle',
-                        states: {
-                            hover: {
-                                enabled: true
-                            }
-                        }
                     }
                 }
             },
