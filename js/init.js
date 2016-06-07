@@ -29,10 +29,11 @@ $(document).ready(function() {
     $.get('json/' + country + '.json', function(data) {
         var series = {}
         var headers = {
-            "Opera": { name: 'Opera', color: "red", icon: "opera.png" },
+            "Presto": { name: 'Presto', color: "red", icon: "opera.png" },
             "Gecko": { name: 'Gecko', color: "#FF8040", icon: "firefox.png" },
-            "MSIE": { name: 'MSIE', color: "blue", icon: "ie.png" },
-            "WebKit/KHTML": { name: 'Webkit', color: "green", icon: "chrome.png" }
+            "Trident/EdgeHTML": { name: 'MSIE', color: "blue", icon: "ie.png" },
+            "Blink": { name: 'Blink', color: "green", icon: "chrome.png" },
+            "WebKit/KHTML": { name: 'Webkit', color: "green", icon: "webkit.png" }
         }
         $.each(data.coding, function(code, browser){
             series[code] = headers[browser.name];
