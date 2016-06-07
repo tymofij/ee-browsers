@@ -11,7 +11,7 @@ country_codes = {
     3:'lithuania',
     4:'latvia',
     5:'estonia',
-    6:'czech_republic',
+    6:'czechia',
     7:'hungary',
     8:'ukraine',
     9:'russia',

@@ -20,9 +20,9 @@ $(document).ready(function() {
         'data-text': title
     })
 
-    var countries = "bulgaria czech_republic estonia hungary latvia lithuania poland slovakia russia turkey ukraine".split(" ")
+    var countries = "bulgaria czechia estonia hungary latvia lithuania poland slovakia russia turkey ukraine".split(" ")
     $.each(countries, function(itemNo, item) {
-        iname = item.replace(/_/g, ' ').capitalize()
+        iname = item.capitalize()
         $("#countries").append('<a href="'+window.location.pathname+'?'+item+'" style="background-image:url(flags/'+item+'.png);">'+iname+'</a>')
     });
 
